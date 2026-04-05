@@ -1,6 +1,6 @@
 # Columbia Venture Partners
 
-A modern, responsive website for Columbia Venture Partners - the student club for entrepreneurship at Columbia University.
+A modern, responsive website for Columbia Venture Partners - the student club for venture capital at Columbia University.
 
 ## Features
 
