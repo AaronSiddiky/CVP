@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /team
+Disallow: /team/
+
+Sitemap: https://www.columbiavp.com/sitemap.xml
