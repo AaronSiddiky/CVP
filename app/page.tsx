@@ -170,7 +170,7 @@ export default function Home() {
         <div className="apply-wrap">
           <Reveal className="eyebrow" style={{ paddingTop: 8 }}>§ 06 &nbsp; Admissions</Reveal>
           <Reveal delay={0.08}>
-            <h2 className="apply-title">We consider <em>fewer than twenty</em> applicants each autumn.</h2>
+            <h2 className="apply-title">We consider <em>fewer than twenty</em> applicants each fall.</h2>
           </Reveal>
 
           <div className="apply-body">
