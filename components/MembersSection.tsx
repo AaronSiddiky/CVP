@@ -103,7 +103,7 @@ const teamData: Record<string, YearData> = {
     alumni: [
       { name: 'Cynthia Hajal',           cohort: 2016 },
       { name: 'Bradley Miles',     cohort: 2017, label: 'Founder · Founding President', linkedin: 'https://www.linkedin.com/in/bmiles1/' },
-      { name: 'Haidar Jamal-Baba', cohort: 2017,                                         linkedin: 'https://www.linkedin.com/in/haidar-jamal-baba-a208b49b/' },
+      { name: 'Haidar Jamal-Baba', cohort: 2017, label: 'Co-Founder',                    linkedin: 'https://www.linkedin.com/in/haidar-jamal-baba-a208b49b/' },
       { name: 'Oscar Alvarez',     cohort: 2017, label: 'Co-Founder',                    linkedin: 'https://www.linkedin.com/in/oscar-alvarez-1111oai/' },
       { name: 'Daniela Lopez-Salcedo',   cohort: 2017 },
       { name: 'Kevin Chu',               cohort: 2018 },
