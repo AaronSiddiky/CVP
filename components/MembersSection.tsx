@@ -35,7 +35,7 @@ const teamData: Record<string, YearData> = {
       { name: 'Aaron Siddiky',      role: 'Partnerships & Communications',photo: '/AaronSiddiky.jpg',             linkedin: 'https://www.linkedin.com/in/aaronsiddiky' },
       { name: 'Patrick Dugan',      role: 'Programming',                  photo: '/patrickdugan.jpg',             linkedin: 'https://www.linkedin.com/in/patrick-dugan-0435a695/' },
       { name: 'Ethan Rhee',         role: 'Programming',                  photo: '/handoff/EthanRhee.png',        linkedin: 'https://www.linkedin.com/in/ethan-rhee/' },
-      { name: 'Ryan Chen',          role: 'Partnerships',                 photo: '/handoff/RyanChen.jpg',         linkedin: 'https://www.linkedin.com/in/ryan-chen-9b678a32b/' },
+      { name: 'Ryan Chen',          role: 'Partnerships',                 photo: '/IMG_8928.png',                 linkedin: 'https://www.linkedin.com/in/ryan-chen-9b678a32b/' },
       { name: 'Adele Chen',         role: 'Treasurer',                    photo: '/handoff/Adele Chen.jpg',       linkedin: 'https://www.linkedin.com/in/adele--chen/' },
       { name: 'Adrian Lazzi',       role: 'Head of Associates',           photo: '/handoff/AdrianLazzi.jpg',      linkedin: 'https://www.linkedin.com/in/adrianlazzi/' },
       { name: 'Sophia Bassi',       role: 'Head of Associates',           photo: '/sophiabassi.jpg',              linkedin: 'https://www.linkedin.com/in/sophia-bassi/' },
