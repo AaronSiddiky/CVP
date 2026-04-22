@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: 'Columbia Venture Partners',
   description: "Columbia University's premier venture capital initiative.",
   icons: {
-    icon: '/cvplogo.png',
-    apple: '/cvplogo.png',
+    icon: '/cvpfavicon.png',
+    apple: '/cvpfavicon.png',
   },
 }
 
