@@ -30,7 +30,7 @@ const teamData: Record<string, YearData> = {
       { name: 'Justine Ludden',        role: 'President · Education',   photo: '/handoff/JustineLudden.jpg' },
       { name: 'Alexander Zhao',        role: 'Vice President',          photo: '/handoff/AlexZhao.jpg' },
       { name: 'Jenna Zhao',            role: 'President Emeritus',      photo: '/handoff/JennaZhao.jpg' },
-      { name: 'Aaron Siddiky',         role: 'Communications',          photo: '/AaronSiddiky.jpg' },
+      { name: 'Aaron Siddiky',         role: 'Partnerships & Communications', photo: '/AaronSiddiky.jpg' },
       { name: 'Patrick Dugan',         role: 'Programming',             photo: '/patrickdugan.jpg' },
       { name: 'Ethan Rhee',            role: 'Programming',             photo: '/handoff/EthanRhee.png' },
       { name: 'Ryan Chen',             role: 'Partnerships',            photo: '/handoff/RyanChen.jpg' },
