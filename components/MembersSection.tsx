@@ -42,6 +42,7 @@ const teamData: Record<string, YearData> = {
       { name: 'Jackie Wang',           role: 'Community',               photo: '/handoff/JackieWang.jpg' },
       { name: 'Gabriela Berenholc',    role: 'Alumni Relations',        photo: '/handoff/GabrielaBerenholc.jpg' },
       { name: 'Ho Jin Jang',           role: 'Professional Development',photo: '/handoff/HoJinJang.png' },
+      { name: 'Jonah Morris',          role: 'Education',               photo: '/handoff/JonahMorris.jpg' },
     ],
     associates: [
       'Shan Then', 'Paarth Ambani', 'Matthew Eng', 'Isabel Lee', 'Drew Smith', 'Daniel Ah Hee',
