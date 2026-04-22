@@ -6,11 +6,13 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Reveal, StaggerGroup, StaggerItem } from './Motion'
 
 interface Member { name: string; role: string; photo?: string }
+interface AlumniMember { name: string; cohort?: number }
 
 interface YearData {
   exec?: Member[]
   associates?: Member[]
   analysts?: Member[]
+  alumni?: AlumniMember[]
   placeholder?: boolean
   founding?: boolean
   note?: string
@@ -76,6 +78,59 @@ const teamData: Record<string, YearData> = {
       { name: 'Michael Roberson',  role: 'Communications' },
       { name: 'Raunak Agrawal',    role: 'Logistics' },
       { name: 'Ho Jin Jang',       role: 'Community' },
+    ],
+  },
+  'Alumni': {
+    alumni: [
+      { name: 'Cynthia Hajal',           cohort: 2016 },
+      { name: 'Bradley Miles',           cohort: 2017 },
+      { name: 'Haidar Jamal-Baba',       cohort: 2017 },
+      { name: 'Oscar Alvarez',           cohort: 2017 },
+      { name: 'Daniela Lopez-Salcedo',   cohort: 2017 },
+      { name: 'Kevin Chu',               cohort: 2018 },
+      { name: 'Dan Briere',              cohort: 2018 },
+      { name: 'Leena Dai',               cohort: 2018 },
+      { name: 'Rosalie Froom',           cohort: 2018 },
+      { name: 'Mercedes Chien' },
+      { name: 'Sidrath Singh',           cohort: 2018 },
+      { name: 'Shyamolie Biyani',        cohort: 2018 },
+      { name: 'Roma Patel',              cohort: 2018 },
+      { name: 'Paul Tung',               cohort: 2019 },
+      { name: 'George Jiang',            cohort: 2019 },
+      { name: 'Sameer Jain',             cohort: 2019 },
+      { name: 'Kevin Wu',                cohort: 2019 },
+      { name: 'Cesar',                   cohort: 2019 },
+      { name: 'Shaan Fye',               cohort: 2020 },
+      { name: 'James Towne' },
+      { name: 'Caroline Teunissen',      cohort: 2020 },
+      { name: 'Rishi Shah',              cohort: 2020 },
+      { name: 'Michael Retchin',         cohort: 2020 },
+      { name: 'Francesco Grechi',        cohort: 2020 },
+      { name: 'Pushan Hinduja',          cohort: 2020 },
+      { name: 'Maya Matthews',           cohort: 2020 },
+      { name: 'David Carratu',           cohort: 2020 },
+      { name: 'Maria Kogan',             cohort: 2020 },
+      { name: 'Neil Agarwal',            cohort: 2020 },
+      { name: 'Oliver Wang',             cohort: 2020 },
+      { name: 'Vera Wang',               cohort: 2021 },
+      { name: 'Isaac Ick',               cohort: 2021 },
+      { name: 'Peter Rutkowski',         cohort: 2021 },
+      { name: 'Shefali Kumar',           cohort: 2021 },
+      { name: 'Aurnov Chattopadhyay',    cohort: 2021 },
+      { name: 'Michael Wang',            cohort: 2021 },
+      { name: 'Connie Crighton',         cohort: 2022 },
+      { name: 'Tony Ryou',               cohort: 2022 },
+      { name: 'Michelle Tang',           cohort: 2022 },
+      { name: 'Noah Sadik',              cohort: 2022 },
+      { name: 'Karen Shi',               cohort: 2022 },
+      { name: 'Hannah Fenlon',           cohort: 2022 },
+      { name: 'Michael Wang',            cohort: 2023 },
+      { name: 'Keshav Menon',            cohort: 2023 },
+      { name: 'Rachel Sacks',            cohort: 2023 },
+      { name: 'Yekaterina Alferova',     cohort: 2023 },
+      { name: 'Jeren Wei',               cohort: 2023 },
+      { name: 'Nandini Talwar',          cohort: 2024 },
+      { name: 'Aditya Kankariya' },
     ],
   },
   '2023-2024': {
@@ -152,6 +207,45 @@ function MemberCard({ member, leader, index }: { member: Member; leader: boolean
   )
 }
 
+function AlumniView({ alumni }: { alumni: AlumniMember[] }) {
+  // Group by cohort, unknown at end
+  const grouped: Record<string, AlumniMember[]> = {}
+  for (const a of alumni) {
+    const key = a.cohort ? String(a.cohort) : 'unknown'
+    if (!grouped[key]) grouped[key] = []
+    grouped[key].push(a)
+  }
+  const sortedKeys = Object.keys(grouped).sort((a, b) => {
+    if (a === 'unknown') return 1
+    if (b === 'unknown') return -1
+    return Number(a) - Number(b)
+  })
+
+  return (
+    <div className="alumni-block">
+      {sortedKeys.map(key => (
+        <div key={key} className="alumni-cohort">
+          <div className="alumni-cohort-head">
+            <span className="eyebrow">
+              {key === 'unknown' ? 'Cohort Unknown' : `CVP ${key} Cohort`}
+            </span>
+          </div>
+          <div className="alumni-list">
+            {grouped[key].map(a => (
+              <div key={a.name} className="alumni-row">
+                <span className="alumni-name">{a.name}</span>
+                <span className="alumni-cohort-tag">
+                  {key === 'unknown' ? '—' : `CVP ${key} Cohort`}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 const MembersSection = () => {
   const [activeYear, setActiveYear] = useState('2026-2027')
   const data = teamData[activeYear]
@@ -205,7 +299,9 @@ const MembersSection = () => {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            {data.placeholder ? (
+            {data.alumni ? (
+              <AlumniView alumni={data.alumni} />
+            ) : data.placeholder ? (
               <div className="empty-state">
                 <h3
                   dangerouslySetInnerHTML={{
