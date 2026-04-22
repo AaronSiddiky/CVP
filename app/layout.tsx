@@ -4,6 +4,10 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Columbia Venture Partners',
   description: "Columbia University's premier venture capital initiative.",
+  icons: {
+    icon: '/cvplogo.png',
+    apple: '/cvplogo.png',
+  },
 }
 
 export const viewport: Viewport = {
