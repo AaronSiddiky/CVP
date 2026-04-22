@@ -80,6 +80,25 @@ const teamData: Record<string, YearData> = {
       { name: 'Ho Jin Jang',       role: 'Community' },
     ],
   },
+  '2023-2024': {
+    exec: [
+      { name: 'Anjali Barnabas',  role: 'President' },
+      { name: 'Lucy Chen',        role: 'President' },
+      { name: 'Ryan Fortani',     role: 'Vice President' },
+      { name: 'Alexis Aiudi',     role: 'Late Stage Lead' },
+      { name: 'Alicia Zhang',     role: 'Logistics' },
+      { name: 'Allison Lin',      role: 'Director of Programming' },
+      { name: 'Christina Xiao',   role: 'Treasurer' },
+      { name: 'Christine Kim',    role: 'Director of Professional Development' },
+      { name: 'Claire Graham',    role: 'Director of Alumni Relations' },
+      { name: 'Helena Yang',      role: 'Logistics' },
+      { name: 'Kevin Xu',         role: 'Director of Research' },
+      { name: 'Renee Jiang',      role: 'Early Stage Lead' },
+      { name: 'Tony He',          role: 'Director of Partnerships' },
+      { name: 'Taylor Gonsalez',  role: 'Director of Community' },
+      { name: 'Veni Dole',        role: 'Director of Communications' },
+    ],
+  },
   'Alumni': {
     alumni: [
       { name: 'Cynthia Hajal',           cohort: 2016 },
@@ -91,7 +110,6 @@ const teamData: Record<string, YearData> = {
       { name: 'Dan Briere',              cohort: 2018 },
       { name: 'Leena Dai',               cohort: 2018 },
       { name: 'Rosalie Froom',           cohort: 2018 },
-      { name: 'Mercedes Chien' },
       { name: 'Sidrath Singh',           cohort: 2018 },
       { name: 'Shyamolie Biyani',        cohort: 2018 },
       { name: 'Roma Patel',              cohort: 2018 },
@@ -101,7 +119,6 @@ const teamData: Record<string, YearData> = {
       { name: 'Kevin Wu',                cohort: 2019 },
       { name: 'Cesar',                   cohort: 2019 },
       { name: 'Shaan Fye',               cohort: 2020 },
-      { name: 'James Towne' },
       { name: 'Caroline Teunissen',      cohort: 2020 },
       { name: 'Rishi Shah',              cohort: 2020 },
       { name: 'Michael Retchin',         cohort: 2020 },
@@ -130,26 +147,6 @@ const teamData: Record<string, YearData> = {
       { name: 'Yekaterina Alferova',     cohort: 2023 },
       { name: 'Jeren Wei',               cohort: 2023 },
       { name: 'Nandini Talwar',          cohort: 2024 },
-      { name: 'Aditya Kankariya' },
-    ],
-  },
-  '2023-2024': {
-    exec: [
-      { name: 'Anjali Barnabas',  role: 'President' },
-      { name: 'Lucy Chen',        role: 'President' },
-      { name: 'Ryan Fortani',     role: 'Vice President' },
-      { name: 'Alexis Aiudi',     role: 'Late Stage Lead' },
-      { name: 'Alicia Zhang',     role: 'Logistics' },
-      { name: 'Allison Lin',      role: 'Director of Programming' },
-      { name: 'Christina Xiao',   role: 'Treasurer' },
-      { name: 'Christine Kim',    role: 'Director of Professional Development' },
-      { name: 'Claire Graham',    role: 'Director of Alumni Relations' },
-      { name: 'Helena Yang',      role: 'Logistics' },
-      { name: 'Kevin Xu',         role: 'Director of Research' },
-      { name: 'Renee Jiang',      role: 'Early Stage Lead' },
-      { name: 'Tony He',          role: 'Director of Partnerships' },
-      { name: 'Taylor Gonsalez',  role: 'Director of Community' },
-      { name: 'Veni Dole',        role: 'Director of Communications' },
     ],
   },
 }
@@ -215,28 +212,22 @@ function AlumniView({ alumni }: { alumni: AlumniMember[] }) {
     if (!grouped[key]) grouped[key] = []
     grouped[key].push(a)
   }
-  const sortedKeys = Object.keys(grouped).sort((a, b) => {
-    if (a === 'unknown') return 1
-    if (b === 'unknown') return -1
-    return Number(a) - Number(b)
-  })
+  const sortedKeys = Object.keys(grouped)
+    .filter(k => k !== 'unknown')
+    .sort((a, b) => Number(a) - Number(b))
 
   return (
     <div className="alumni-block">
       {sortedKeys.map(key => (
         <div key={key} className="alumni-cohort">
           <div className="alumni-cohort-head">
-            <span className="eyebrow">
-              {key === 'unknown' ? 'Cohort Unknown' : `CVP ${key} Cohort`}
-            </span>
+            <span className="eyebrow">{key} Cohort</span>
           </div>
           <div className="alumni-list">
             {grouped[key].map(a => (
               <div key={a.name} className="alumni-row">
                 <span className="alumni-name">{a.name}</span>
-                <span className="alumni-cohort-tag">
-                  {key === 'unknown' ? '—' : `CVP ${key} Cohort`}
-                </span>
+                <span className="alumni-cohort-tag">{key} Cohort</span>
               </div>
             ))}
           </div>
