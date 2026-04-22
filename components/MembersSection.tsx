@@ -49,7 +49,7 @@ const teamData: Record<string, YearData> = {
       'Victor Robila', 'Matteo Karkour', 'Luke Freed', 'Leila Cohen', 'Shreya Amalapurapu',
       'Victor Zhu', 'Derin Arpacioglu', 'Jayantha Kantamneni', 'Karim Nabilsi', 'Armaan Thakker',
       'Mrin Chilkoti', 'Carmelo Kniska', 'Tony He', 'Rohan Singh', 'Annabel Cui', 'Sophia Li',
-      'Naythan Chan', 'Jonah Morris', 'Annabelle Leung', 'Brandon Yao', 'Michael Roberson',
+      'Naythan Chan', 'Annabelle Leung', 'Brandon Yao', 'Michael Roberson',
       'Alexa Kayman', 'Kirsten Real',
     ].map(n => ({ name: n, role: 'Associate' })),
     analysts: [
