@@ -33,7 +33,6 @@ const Header = () => {
       </div>
       <a href="#top" className="nav-brand">Columbia Venture Partners</a>
       <div className="nav-right">
-        <a href="https://morningsideventurefund.com" target="_blank" rel="noopener noreferrer" className="nav-link">Fund</a>
         <a href="#apply" className="nav-cta">Apply</a>
       </div>
     </nav>
