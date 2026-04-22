@@ -609,9 +609,8 @@ section { padding: 0 var(--px); }
 }
 .exec-card {
   background: var(--paper);
-  padding: 28px 24px 24px;
-  display: flex; flex-direction: column; gap: 20px;
-  min-height: 220px;
+  padding: 20px 20px 24px;
+  display: flex; flex-direction: column;
   transition: background .25s;
   cursor: default;
 }
@@ -622,26 +621,34 @@ section { padding: 0 var(--px); }
 }
 .exec-card.leader:hover { background: var(--ink-soft); }
 .exec-card.leader .member-tile { border-color: var(--cream); color: var(--cream); }
+.exec-card.leader.has-photo .member-tile { border-color: transparent; }
 .exec-card.leader:hover .member-tile { background: var(--cream); color: var(--ink); }
+.exec-card.leader.has-photo:hover .member-tile { background: transparent; }
 .exec-card.leader .member-name { color: var(--cream); }
 .exec-card.leader .member-role { color: rgba(246,243,236,0.7); }
 .exec-card.leader .member-meta { color: var(--green-soft); }
 
 .member-tile {
-  width: 60px; height: 60px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border: 1px solid var(--green);
   color: var(--green);
   display: grid; place-items: center;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 22px;
+  font-size: 36px;
   font-weight: 500;
   background: transparent;
   transition: all .25s;
   flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
+.exec-card.has-photo .member-tile { border-color: transparent; }
 .exec-card:not(.leader):hover .member-tile { background: var(--green); color: var(--cream); }
-.member-info { margin-top: auto; }
+.exec-card:not(.leader).has-photo:hover .member-tile { background: transparent; }
+.member-initials { position: relative; z-index: 1; }
+.member-info { margin-top: 16px; }
 .member-name {
   font-family: var(--serif);
   font-style: italic;
@@ -1013,7 +1020,7 @@ section { padding: 0 var(--px); }
   .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
   .exec-grid, .assoc-list { grid-template-columns: repeat(2, 1fr); }
-  .exec-card { min-height: 180px; padding: 22px 18px 18px; }
+  .exec-card { padding: 16px 16px 20px; }
   .exec-card:nth-child(2n) { border-right: none; }
 
   .photo-strip,
@@ -1061,7 +1068,7 @@ section { padding: 0 var(--px); }
   .photo-strip > div { aspect-ratio: 4/3; }
 
   .exec-grid, .assoc-list { grid-template-columns: 1fr; }
-  .exec-card { min-height: auto; padding: 20px; }
+  .exec-card { padding: 14px 14px 18px; }
 
   .assoc-row {
     flex-direction: row;

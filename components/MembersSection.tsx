@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Reveal, StaggerGroup, StaggerItem } from './Motion'
 
-interface Member { name: string; role: string }
+interface Member { name: string; role: string; photo?: string }
 
 interface YearData {
   exec?: Member[]
@@ -18,29 +19,29 @@ interface YearData {
 const teamData: Record<string, YearData> = {
   '2026-2027': {
     exec: [
-      { name: 'Sophia Bassi', role: 'President' },
-      { name: 'Patrick Dugan', role: 'President' },
+      { name: 'Sophia Bassi',   role: 'President', photo: '/sophiabassi.jpg' },
+      { name: 'Patrick Dugan',  role: 'President', photo: '/patrickdugan.jpg' },
     ],
     note: 'Incoming Executive Board yet to be announced.',
   },
   '2025-2026': {
     exec: [
-      { name: 'Jake Lee', role: 'President' },
-      { name: 'Justine Ludden', role: 'President · Education' },
-      { name: 'Alexander Zhao', role: 'Vice President' },
-      { name: 'Jenna Zhao', role: 'President Emeritus' },
-      { name: 'Aaron Siddiky', role: 'Communications' },
-      { name: 'Patrick Dugan', role: 'Programming' },
-      { name: 'Ethan Rhee', role: 'Programming' },
-      { name: 'Ryan Chen', role: 'Partnerships' },
-      { name: 'Adele Chen', role: 'Treasurer' },
-      { name: 'Adrian Lazzi', role: 'Head of Associates' },
-      { name: 'Sophia Bassi', role: 'Head of Associates' },
-      { name: 'Audrea Chen', role: 'Communications' },
-      { name: 'Liam Dorn', role: 'Logistics' },
-      { name: 'Jackie Wang', role: 'Community' },
-      { name: 'Gabriela Berenholc', role: 'Alumni Relations' },
-      { name: 'Ho Jin Jang', role: 'Professional Development' },
+      { name: 'Jake Lee',              role: 'President',               photo: '/handoff/JakeLee.jpg' },
+      { name: 'Justine Ludden',        role: 'President · Education',   photo: '/handoff/JustineLudden.jpg' },
+      { name: 'Alexander Zhao',        role: 'Vice President',          photo: '/handoff/AlexZhao.jpg' },
+      { name: 'Jenna Zhao',            role: 'President Emeritus',      photo: '/handoff/JennaZhao.jpg' },
+      { name: 'Aaron Siddiky',         role: 'Communications',          photo: '/AaronSiddiky.jpg' },
+      { name: 'Patrick Dugan',         role: 'Programming',             photo: '/patrickdugan.jpg' },
+      { name: 'Ethan Rhee',            role: 'Programming',             photo: '/handoff/EthanRhee.png' },
+      { name: 'Ryan Chen',             role: 'Partnerships',            photo: '/handoff/RyanChen.jpg' },
+      { name: 'Adele Chen',            role: 'Treasurer',               photo: '/handoff/Adele Chen.jpg' },
+      { name: 'Adrian Lazzi',          role: 'Head of Associates',      photo: '/handoff/AdrianLazzi.jpg' },
+      { name: 'Sophia Bassi',          role: 'Head of Associates',      photo: '/sophiabassi.jpg' },
+      { name: 'Audrea Chen',           role: 'Communications',          photo: '/handoff/AudreaChen.jpg' },
+      { name: 'Liam Dorn',             role: 'Logistics',               photo: '/handoff/LiamDorn.jpg' },
+      { name: 'Jackie Wang',           role: 'Community',               photo: '/handoff/JackieWang.jpg' },
+      { name: 'Gabriela Berenholc',    role: 'Alumni Relations',        photo: '/handoff/GabrielaBerenholc.jpg' },
+      { name: 'Ho Jin Jang',           role: 'Professional Development',photo: '/handoff/HoJinJang.png' },
     ],
     associates: [
       'Shan Then', 'Paarth Ambani', 'Matthew Eng', 'Isabel Lee', 'Drew Smith', 'Daniel Ah Hee',
@@ -59,40 +60,40 @@ const teamData: Record<string, YearData> = {
   },
   '2024-2025': {
     exec: [
-      { name: 'Ryan Fortani', role: 'President' },
-      { name: 'Kevin Xu', role: 'President' },
-      { name: 'Jake Lee', role: 'Vice President' },
-      { name: 'Christina Xiao', role: 'Treasurer' },
-      { name: 'Brandon Yao', role: 'Partnerships' },
-      { name: 'Luke Freed', role: 'Programming' },
-      { name: 'Jenna Zhao', role: 'Programming' },
-      { name: 'Alicia Zhang', role: 'Professional Development' },
-      { name: 'Claire Graham', role: 'Alumni Relations' },
-      { name: 'Alexander Zhao', role: 'Research' },
-      { name: 'Adrian Lazzi', role: 'Research' },
-      { name: 'Kirsten Real', role: 'Communications' },
-      { name: 'Michael Roberson', role: 'Communications' },
-      { name: 'Raunak Agrawal', role: 'Logistics' },
-      { name: 'Ho Jin Jang', role: 'Community' },
+      { name: 'Ryan Fortani',      role: 'President' },
+      { name: 'Kevin Xu',          role: 'President' },
+      { name: 'Jake Lee',          role: 'Vice President' },
+      { name: 'Christina Xiao',    role: 'Treasurer' },
+      { name: 'Brandon Yao',       role: 'Partnerships' },
+      { name: 'Luke Freed',        role: 'Programming' },
+      { name: 'Jenna Zhao',        role: 'Programming' },
+      { name: 'Alicia Zhang',      role: 'Professional Development' },
+      { name: 'Claire Graham',     role: 'Alumni Relations' },
+      { name: 'Alexander Zhao',    role: 'Research' },
+      { name: 'Adrian Lazzi',      role: 'Research' },
+      { name: 'Kirsten Real',      role: 'Communications' },
+      { name: 'Michael Roberson',  role: 'Communications' },
+      { name: 'Raunak Agrawal',    role: 'Logistics' },
+      { name: 'Ho Jin Jang',       role: 'Community' },
     ],
   },
   '2023-2024': {
     exec: [
-      { name: 'Anjali Barnabas', role: 'President' },
-      { name: 'Lucy Chen', role: 'President' },
-      { name: 'Ryan Fortani', role: 'Vice President' },
-      { name: 'Alexis Aiudi', role: 'Late Stage Lead' },
-      { name: 'Alicia Zhang', role: 'Logistics' },
-      { name: 'Allison Lin', role: 'Director of Programming' },
-      { name: 'Christina Xiao', role: 'Treasurer' },
-      { name: 'Christine Kim', role: 'Director of Professional Development' },
-      { name: 'Claire Graham', role: 'Director of Alumni Relations' },
-      { name: 'Helena Yang', role: 'Logistics' },
-      { name: 'Kevin Xu', role: 'Director of Research' },
-      { name: 'Renee Jiang', role: 'Early Stage Lead' },
-      { name: 'Tony He', role: 'Director of Partnerships' },
-      { name: 'Taylor Gonsalez', role: 'Director of Community' },
-      { name: 'Veni Dole', role: 'Director of Communications' },
+      { name: 'Anjali Barnabas',  role: 'President' },
+      { name: 'Lucy Chen',        role: 'President' },
+      { name: 'Ryan Fortani',     role: 'Vice President' },
+      { name: 'Alexis Aiudi',     role: 'Late Stage Lead' },
+      { name: 'Alicia Zhang',     role: 'Logistics' },
+      { name: 'Allison Lin',      role: 'Director of Programming' },
+      { name: 'Christina Xiao',   role: 'Treasurer' },
+      { name: 'Christine Kim',    role: 'Director of Professional Development' },
+      { name: 'Claire Graham',    role: 'Director of Alumni Relations' },
+      { name: 'Helena Yang',      role: 'Logistics' },
+      { name: 'Kevin Xu',         role: 'Director of Research' },
+      { name: 'Renee Jiang',      role: 'Early Stage Lead' },
+      { name: 'Tony He',          role: 'Director of Partnerships' },
+      { name: 'Taylor Gonsalez',  role: 'Director of Community' },
+      { name: 'Veni Dole',        role: 'Director of Communications' },
     ],
   },
 }
@@ -119,7 +120,7 @@ function MemberCard({ member, leader, index }: { member: Member; leader: boolean
   const reduced = useReducedMotion()
   return (
     <motion.div
-      className={`exec-card${leader ? ' leader' : ''}`}
+      className={`exec-card${leader ? ' leader' : ''}${member.photo ? ' has-photo' : ''}`}
       initial={reduced ? {} : { opacity: 0, y: 16 }}
       animate={reduced ? {} : { opacity: 1, y: 0 }}
       transition={{
@@ -128,7 +129,19 @@ function MemberCard({ member, leader, index }: { member: Member; leader: boolean
         ease: [0.2, 0.7, 0.2, 1],
       }}
     >
-      <div className="member-tile">{initials(member.name)}</div>
+      <div className="member-tile">
+        {member.photo ? (
+          <Image
+            src={member.photo}
+            alt={member.name}
+            fill
+            sizes="(max-width: 560px) 100vw, (max-width: 820px) 50vw, 25vw"
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          />
+        ) : (
+          <span className="member-initials">{initials(member.name)}</span>
+        )}
+      </div>
       <div className="member-info">
         <div className="member-name">{member.name}</div>
         <div className="member-role">{member.role}</div>
@@ -214,10 +227,10 @@ const MembersSection = () => {
                     </div>
                     <div className="exec-grid">
                       {leaders.map((m, i) => (
-                        <MemberCard key={`leader-${m.name}`} member={m} leader index={i} />
+                        <MemberCard key={`leader-${m.name}-${m.role}`} member={m} leader index={i} />
                       ))}
                       {rest.map((m, i) => (
-                        <MemberCard key={`rest-${m.name}`} member={m} leader={false} index={leaders.length + i} />
+                        <MemberCard key={`rest-${m.name}-${m.role}`} member={m} leader={false} index={leaders.length + i} />
                       ))}
                     </div>
                     {data.note && (
