@@ -128,7 +128,7 @@ export default function Home() {
             photos={[
               { src: '/CVP in London 2025.JPG', alt: 'CVP in London 2025' },
               { src: '/CVP in London 2025 (1).JPG', alt: 'CVP in London 2025' },
-              { src: '/CVP in Chicago (2).JPG', alt: 'CVP in Chicago' },
+              { src: '/chicagoFInal.JPG', alt: 'CVP in Chicago' },
             ]}
           />
         </Reveal>
