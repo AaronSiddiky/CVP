@@ -785,10 +785,16 @@ section { padding: 0 var(--px); }
 .alumni-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding: 11px 0;
   border-bottom: 1px solid var(--rule-soft);
-  gap: 12px;
+  gap: 8px;
+}
+.alumni-name-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 .alumni-name {
   font-family: var(--serif);
@@ -797,14 +803,25 @@ section { padding: 0 var(--px); }
   color: var(--ink);
   font-weight: 500;
 }
-.alumni-cohort-tag {
+.alumni-label {
   font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 0.14em;
+  font-size: 9px;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--muted);
-  white-space: nowrap;
+  color: var(--green);
 }
+.alumni-linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--muted);
+  transition: color .2s;
+  margin-left: 6px;
+}
+.alumni-linkedin:hover { color: var(--green); }
 
 @media (max-width: 1100px) {
   .alumni-list { grid-template-columns: repeat(3, 1fr); }

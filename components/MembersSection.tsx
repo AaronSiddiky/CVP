@@ -6,7 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Reveal, StaggerGroup, StaggerItem } from './Motion'
 
 interface Member { name: string; role: string; photo?: string; linkedin?: string }
-interface AlumniMember { name: string; cohort?: number }
+interface AlumniMember { name: string; cohort?: number; label?: string; linkedin?: string }
 
 interface YearData {
   exec?: Member[]
@@ -63,48 +63,48 @@ const teamData: Record<string, YearData> = {
   },
   '2024-2025': {
     exec: [
-      { name: 'Ryan Fortani',      role: 'President' },
-      { name: 'Kevin Xu',          role: 'President' },
-      { name: 'Jake Lee',          role: 'Vice President' },
-      { name: 'Christina Xiao',    role: 'Treasurer' },
-      { name: 'Brandon Yao',       role: 'Partnerships' },
-      { name: 'Luke Freed',        role: 'Programming' },
-      { name: 'Jenna Zhao',        role: 'Programming' },
-      { name: 'Alicia Zhang',      role: 'Professional Development' },
-      { name: 'Claire Graham',     role: 'Alumni Relations' },
-      { name: 'Alexander Zhao',    role: 'Research' },
-      { name: 'Adrian Lazzi',      role: 'Research' },
-      { name: 'Kirsten Real',      role: 'Communications' },
-      { name: 'Michael Roberson',  role: 'Communications' },
-      { name: 'Raunak Agrawal',    role: 'Logistics' },
-      { name: 'Ho Jin Jang',       role: 'Community' },
+      { name: 'Ryan Fortani',     role: 'President',               photo: '/ryanfortani.jpg',    linkedin: 'https://www.linkedin.com/in/ryan-fortani/' },
+      { name: 'Kevin Xu',         role: 'President',               photo: '/KevinXu.jpg',         linkedin: 'https://www.linkedin.com/in/kevin-k-xu/' },
+      { name: 'Jake Lee',         role: 'Vice President',          photo: '/handoff/JakeLee.jpg', linkedin: 'https://www.linkedin.com/in/lee-jake/' },
+      { name: 'Christina Xiao',   role: 'Treasurer',               photo: '/christinaxiao.jpg',   linkedin: 'https://www.linkedin.com/in/christinayxiao/' },
+      { name: 'Brandon Yao',      role: 'Partnerships',                                           linkedin: 'https://www.linkedin.com/in/brandonyao/' },
+      { name: 'Luke Freed',       role: 'Programming',                                            linkedin: 'https://www.linkedin.com/in/lukefreed/' },
+      { name: 'Jenna Zhao',       role: 'Programming',                                            linkedin: 'https://www.linkedin.com/in/jenna-zhao/' },
+      { name: 'Alicia Zhang',     role: 'Professional Development',                               linkedin: 'https://www.linkedin.com/in/aliciatzhang/' },
+      { name: 'Claire Graham',    role: 'Alumni Relations',                                       linkedin: 'https://www.linkedin.com/in/claire-graham-727b681b0/' },
+      { name: 'Alexander Zhao',   role: 'Research',                                               linkedin: 'https://www.linkedin.com/in/alexszhao/' },
+      { name: 'Adrian Lazzi',     role: 'Research',                                               linkedin: 'https://www.linkedin.com/in/adrianlazzi/' },
+      { name: 'Kirsten Real',     role: 'Communications',                                         linkedin: 'https://www.linkedin.com/in/kirstenreal/' },
+      { name: 'Michael Roberson', role: 'Communications',                                         linkedin: 'https://www.linkedin.com/in/michael-h-roberson/' },
+      { name: 'Raunak Agrawal',   role: 'Logistics',                                              linkedin: 'https://www.linkedin.com/in/raunak--agrawal/' },
+      { name: 'Ho Jin Jang',      role: 'Community',                                              linkedin: 'https://www.linkedin.com/in/jang-hojin/' },
     ],
   },
   '2023-2024': {
     exec: [
-      { name: 'Anjali Barnabas',  role: 'President' },
-      { name: 'Lucy Chen',        role: 'President' },
-      { name: 'Ryan Fortani',     role: 'Vice President' },
-      { name: 'Alexis Aiudi',     role: 'Late Stage Lead' },
-      { name: 'Alicia Zhang',     role: 'Logistics' },
-      { name: 'Allison Lin',      role: 'Director of Programming' },
-      { name: 'Christina Xiao',   role: 'Treasurer' },
-      { name: 'Christine Kim',    role: 'Director of Professional Development' },
-      { name: 'Claire Graham',    role: 'Director of Alumni Relations' },
-      { name: 'Helena Yang',      role: 'Logistics' },
-      { name: 'Kevin Xu',         role: 'Director of Research' },
-      { name: 'Renee Jiang',      role: 'Early Stage Lead' },
-      { name: 'Tony He',          role: 'Director of Partnerships' },
-      { name: 'Taylor Gonsalez',  role: 'Director of Community' },
-      { name: 'Veni Dole',        role: 'Director of Communications' },
+      { name: 'Anjali Barnabas',  role: 'President',                                linkedin: 'https://www.linkedin.com/in/anjalibarnabas/' },
+      { name: 'Lucy Chen',        role: 'President',                                linkedin: 'https://www.linkedin.com/in/lucychen16/' },
+      { name: 'Ryan Fortani',     role: 'Vice President',                           linkedin: 'https://www.linkedin.com/in/ryan-fortani/' },
+      { name: 'Alexis Aiudi',     role: 'Late Stage Lead',                          linkedin: 'https://www.linkedin.com/in/alexis-aiudi/' },
+      { name: 'Alicia Zhang',     role: 'Logistics',                                linkedin: 'https://www.linkedin.com/in/aliciatzhang/' },
+      { name: 'Allison Lin',      role: 'Director of Programming',                  linkedin: 'https://www.linkedin.com/in/yun-tzu-allison-lin/' },
+      { name: 'Christina Xiao',   role: 'Treasurer',                                linkedin: 'https://www.linkedin.com/in/christinayxiao/' },
+      { name: 'Christine Kim',    role: 'Director of Professional Development',      linkedin: 'https://www.linkedin.com/in/christine-kim-0208/' },
+      { name: 'Claire Graham',    role: 'Director of Alumni Relations',              linkedin: 'https://www.linkedin.com/in/claire-graham-727b681b0/' },
+      { name: 'Helena Yang',      role: 'Logistics',                                linkedin: 'https://www.linkedin.com/in/helenayang03/' },
+      { name: 'Kevin Xu',         role: 'Director of Research',                     linkedin: 'https://www.linkedin.com/in/kevin-k-xu/' },
+      { name: 'Renee Jiang',      role: 'Early Stage Lead',                         linkedin: 'https://www.linkedin.com/in/renee-jiang7/' },
+      { name: 'Tony He',          role: 'Director of Partnerships',                 linkedin: 'https://www.linkedin.com/in/tonyhenewyork/' },
+      { name: 'Taylor Gonsalez',  role: 'Director of Community',                    linkedin: 'https://www.linkedin.com/in/taylorrosegonsalez/' },
+      { name: 'Veni Dole',        role: 'Director of Communications',               linkedin: 'https://www.linkedin.com/in/krishnaveni-dole/' },
     ],
   },
   'Alumni': {
     alumni: [
       { name: 'Cynthia Hajal',           cohort: 2016 },
-      { name: 'Bradley Miles',           cohort: 2017 },
-      { name: 'Haidar Jamal-Baba',       cohort: 2017 },
-      { name: 'Oscar Alvarez',           cohort: 2017 },
+      { name: 'Bradley Miles',     cohort: 2017, label: 'Founder · Founding President', linkedin: 'https://www.linkedin.com/in/bmiles1/' },
+      { name: 'Haidar Jamal-Baba', cohort: 2017,                                         linkedin: 'https://www.linkedin.com/in/haidar-jamal-baba-a208b49b/' },
+      { name: 'Oscar Alvarez',     cohort: 2017, label: 'Co-Founder',                    linkedin: 'https://www.linkedin.com/in/oscar-alvarez-1111oai/' },
       { name: 'Daniela Lopez-Salcedo',   cohort: 2017 },
       { name: 'Kevin Chu',               cohort: 2018 },
       { name: 'Dan Briere',              cohort: 2018 },
@@ -242,7 +242,17 @@ function AlumniView({ alumni }: { alumni: AlumniMember[] }) {
           <div className="alumni-list">
             {grouped[key].map(a => (
               <div key={a.name} className="alumni-row">
-                <span className="alumni-name">{a.name}</span>
+                <div className="alumni-name-wrap">
+                  <span className="alumni-name">{a.name}</span>
+                  {a.label && <span className="alumni-label">{a.label}</span>}
+                </div>
+                {a.linkedin && (
+                  <a href={a.linkedin} target="_blank" rel="noopener noreferrer" className="alumni-linkedin" aria-label={`${a.name} on LinkedIn`}>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                )}
               </div>
             ))}
           </div>
