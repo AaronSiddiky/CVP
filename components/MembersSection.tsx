@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Reveal, StaggerGroup, StaggerItem } from './Motion'
 
-interface Member { name: string; role: string; photo?: string }
+interface Member { name: string; role: string; photo?: string; linkedin?: string }
 interface AlumniMember { name: string; cohort?: number }
 
 interface YearData {
@@ -21,30 +21,30 @@ interface YearData {
 const teamData: Record<string, YearData> = {
   '2026-2027': {
     exec: [
-      { name: 'Sophia Bassi',   role: 'President', photo: '/sophiabassi.jpg' },
-      { name: 'Patrick Dugan',  role: 'President', photo: '/patrickdugan.jpg' },
+      { name: 'Sophia Bassi',  role: 'President', photo: '/sophiabassi.jpg',   linkedin: 'https://www.linkedin.com/in/sophia-bassi/' },
+      { name: 'Patrick Dugan', role: 'President', photo: '/patrickdugan.jpg',  linkedin: 'https://www.linkedin.com/in/patrick-dugan-0435a695/' },
     ],
     note: 'Incoming Executive Board yet to be announced.',
   },
   '2025-2026': {
     exec: [
-      { name: 'Jake Lee',              role: 'President',               photo: '/handoff/JakeLee.jpg' },
-      { name: 'Justine Ludden',        role: 'President · Education',   photo: '/handoff/JustineLudden.jpg' },
-      { name: 'Alexander Zhao',        role: 'Vice President',          photo: '/handoff/AlexZhao.jpg' },
-      { name: 'Jenna Zhao',            role: 'President Emeritus',      photo: '/handoff/JennaZhao.jpg' },
-      { name: 'Aaron Siddiky',         role: 'Partnerships & Communications', photo: '/AaronSiddiky.jpg' },
-      { name: 'Patrick Dugan',         role: 'Programming',             photo: '/patrickdugan.jpg' },
-      { name: 'Ethan Rhee',            role: 'Programming',             photo: '/handoff/EthanRhee.png' },
-      { name: 'Ryan Chen',             role: 'Partnerships',            photo: '/handoff/RyanChen.jpg' },
-      { name: 'Adele Chen',            role: 'Treasurer',               photo: '/handoff/Adele Chen.jpg' },
-      { name: 'Adrian Lazzi',          role: 'Head of Associates',      photo: '/handoff/AdrianLazzi.jpg' },
-      { name: 'Sophia Bassi',          role: 'Head of Associates',      photo: '/sophiabassi.jpg' },
-      { name: 'Audrea Chen',           role: 'Communications',          photo: '/handoff/AudreaChen.jpg' },
-      { name: 'Liam Dorn',             role: 'Logistics',               photo: '/handoff/LiamDorn.jpg' },
-      { name: 'Jackie Wang',           role: 'Community',               photo: '/handoff/JackieWang.jpg' },
-      { name: 'Gabriela Berenholc',    role: 'Alumni Relations',        photo: '/handoff/GabrielaBerenholc.jpg' },
-      { name: 'Ho Jin Jang',           role: 'Professional Development',photo: '/handoff/HoJinJang.png' },
-      { name: 'Jonah Morris',          role: 'Education',               photo: '/handoff/JonahMorris.jpg' },
+      { name: 'Jake Lee',           role: 'President',                    photo: '/handoff/JakeLee.jpg',          linkedin: 'https://www.linkedin.com/in/lee-jake/' },
+      { name: 'Justine Ludden',     role: 'President · Education',        photo: '/handoff/JustineLudden.jpg',    linkedin: 'https://www.linkedin.com/in/justine-ludden-55b621218/' },
+      { name: 'Alexander Zhao',     role: 'Vice President',               photo: '/handoff/AlexZhao.jpg',         linkedin: 'https://www.linkedin.com/in/alexszhao/' },
+      { name: 'Jenna Zhao',         role: 'President Emeritus',           photo: '/handoff/JennaZhao.jpg',        linkedin: 'https://www.linkedin.com/in/jenna-zhao/' },
+      { name: 'Aaron Siddiky',      role: 'Partnerships & Communications',photo: '/AaronSiddiky.jpg',             linkedin: 'https://www.linkedin.com/in/aaronsiddiky' },
+      { name: 'Patrick Dugan',      role: 'Programming',                  photo: '/patrickdugan.jpg',             linkedin: 'https://www.linkedin.com/in/patrick-dugan-0435a695/' },
+      { name: 'Ethan Rhee',         role: 'Programming',                  photo: '/handoff/EthanRhee.png',        linkedin: 'https://www.linkedin.com/in/ethan-rhee/' },
+      { name: 'Ryan Chen',          role: 'Partnerships',                 photo: '/handoff/RyanChen.jpg',         linkedin: 'https://www.linkedin.com/in/ryan-chen-9b678a32b/' },
+      { name: 'Adele Chen',         role: 'Treasurer',                    photo: '/handoff/Adele Chen.jpg',       linkedin: 'https://www.linkedin.com/in/adele--chen/' },
+      { name: 'Adrian Lazzi',       role: 'Head of Associates',           photo: '/handoff/AdrianLazzi.jpg',      linkedin: 'https://www.linkedin.com/in/adrianlazzi/' },
+      { name: 'Sophia Bassi',       role: 'Head of Associates',           photo: '/sophiabassi.jpg',              linkedin: 'https://www.linkedin.com/in/sophia-bassi/' },
+      { name: 'Audrea Chen',        role: 'Communications',               photo: '/handoff/AudreaChen.jpg',       linkedin: 'https://www.linkedin.com/in/audrea-chen/' },
+      { name: 'Liam Dorn',          role: 'Logistics',                    photo: '/handoff/LiamDorn.jpg',         linkedin: 'https://www.linkedin.com/in/liam-dorn/' },
+      { name: 'Jackie Wang',        role: 'Community',                    photo: '/handoff/JackieWang.jpg',       linkedin: 'https://www.linkedin.com/in/jackie-wang2166/' },
+      { name: 'Gabriela Berenholc', role: 'Alumni Relations',             photo: '/handoff/GabrielaBerenholc.jpg',linkedin: 'https://www.linkedin.com/in/gabriela-berenholc-b69383192/' },
+      { name: 'Ho Jin Jang',        role: 'Professional Development',     photo: '/handoff/HoJinJang.png',        linkedin: 'https://www.linkedin.com/in/jang-hojin/' },
+      { name: 'Jonah Morris',       role: 'Education',                    photo: '/handoff/JonahMorris.jpg',      linkedin: 'https://www.linkedin.com/in/jonahgmorris/' },
     ],
     associates: [
       'Shan Then', 'Paarth Ambani', 'Matthew Eng', 'Isabel Lee', 'Drew Smith', 'Daniel Ah Hee',
@@ -196,7 +196,23 @@ function MemberCard({ member, leader, index }: { member: Member; leader: boolean
         )}
       </div>
       <div className="member-info">
-        <div className="member-name">{member.name}</div>
+        <div className="member-name-row">
+          <div className="member-name">{member.name}</div>
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="member-linkedin"
+              aria-label={`${member.name} on LinkedIn`}
+              onClick={e => e.stopPropagation()}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          )}
+        </div>
         <div className="member-role">{member.role}</div>
         <div className="member-meta">{leader ? 'Executive Leadership' : 'Executive Board'}</div>
       </div>

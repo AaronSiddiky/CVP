@@ -649,6 +649,29 @@ section { padding: 0 var(--px); }
 .exec-card:not(.leader).has-photo:hover .member-tile { background: transparent; }
 .member-initials { position: relative; z-index: 1; }
 .member-info { margin-top: 16px; }
+.member-name-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.member-linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  color: var(--muted);
+  background: transparent;
+  transition: color .2s, background .2s;
+  margin-top: 2px;
+}
+.member-linkedin:hover { color: var(--green); background: rgba(26,122,62,0.08); }
+.exec-card.leader .member-linkedin { color: rgba(246,243,236,0.5); }
+.exec-card.leader .member-linkedin:hover { color: var(--cream); background: rgba(246,243,236,0.1); }
 .member-name {
   font-family: var(--serif);
   font-style: italic;
@@ -657,7 +680,6 @@ section { padding: 0 var(--px); }
   color: var(--ink);
   line-height: 1.15;
   letter-spacing: -0.005em;
-  margin-bottom: 4px;
 }
 .member-role {
   font-family: var(--sans);
