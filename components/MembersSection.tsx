@@ -95,13 +95,6 @@ const teamData: Record<string, YearData> = {
       { name: 'Veni Dole', role: 'Director of Communications' },
     ],
   },
-  '2022-2023': { placeholder: true },
-  '2021-2022': { placeholder: true },
-  '2020-2021': { placeholder: true },
-  '2019-2020': { placeholder: true },
-  '2018-2019': { placeholder: true },
-  '2017-2018': { placeholder: true },
-  '2016-2017': { placeholder: true, founding: true },
 }
 
 const years = Object.keys(teamData)
