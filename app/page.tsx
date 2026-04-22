@@ -186,10 +186,9 @@ export default function Home() {
             </StaggerGroup>
 
             <Reveal delay={0.25}>
-              <a href="mailto:columbiaventurepartners@gmail.com" className="apply-cta">
-                Request the application
-                <span>→</span>
-              </a>
+              <div className="apply-cta apply-cta--closed">
+                Recruitment Closed
+              </div>
             </Reveal>
 
             <Reveal delay={0.3}>

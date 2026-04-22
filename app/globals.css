@@ -897,6 +897,15 @@ section { padding: 0 var(--px); }
   cursor: pointer;
 }
 .apply-cta:hover { background: var(--green-deep); border-color: var(--green-deep); gap: 22px; }
+.apply-cta--closed {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--rule);
+  cursor: default;
+  pointer-events: none;
+  letter-spacing: 0.18em;
+}
+.apply-cta--closed:hover { background: transparent; border-color: var(--rule); gap: 0; }
 
 .contact-note {
   font-family: var(--sans) !important;
