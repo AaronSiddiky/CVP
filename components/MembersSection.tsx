@@ -221,13 +221,12 @@ function AlumniView({ alumni }: { alumni: AlumniMember[] }) {
       {sortedKeys.map(key => (
         <div key={key} className="alumni-cohort">
           <div className="alumni-cohort-head">
-            <span className="eyebrow">{key} Cohort</span>
+            <span className="eyebrow">Class of {key}</span>
           </div>
           <div className="alumni-list">
             {grouped[key].map(a => (
               <div key={a.name} className="alumni-row">
                 <span className="alumni-name">{a.name}</span>
-                <span className="alumni-cohort-tag">{key} Cohort</span>
               </div>
             ))}
           </div>
