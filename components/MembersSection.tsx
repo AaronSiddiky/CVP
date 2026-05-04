@@ -27,7 +27,7 @@ const teamData: Record<string, YearData> = {
       { name: 'Anna Wei',               role: 'Co-Director of Programming & Partnerships', photo: '/AnnaWei.jpg',            linkedin: 'https://www.linkedin.com/in/anna-wei/' },
       { name: 'Caitlyn Tang',           role: 'Co-Director of Programming & Partnerships', photo: '/CaitlynTang.jpg',        linkedin: 'https://www.linkedin.com/in/caitlyn-tang/' },
       { name: 'Sandy Chen',             role: 'Co-Director of Programming & Partnerships', photo: '/SandyChen.jpg',          linkedin: 'https://www.linkedin.com/in/5andychen/' },
-      { name: 'Ryan Cortenbach',        role: 'Treasurer',                                 photo: '/RyanCortenbach.jpg',     linkedin: 'https://www.linkedin.com/in/ryancortenbach/' },
+      { name: 'Ryan Cortenbach',        role: 'Treasurer',                                                                  linkedin: 'https://www.linkedin.com/in/ryancortenbach/' },
       { name: 'Michelle Xu',            role: 'Director of Associates',                    photo: '/MichelleXu.jpg',         linkedin: 'https://www.linkedin.com/in/michelle-j-xu/' },
       { name: 'Emma Baltrusaitis',      role: 'Director of Marketing',                     photo: '/EmmaBaltrusitis.jpg',    linkedin: 'https://www.linkedin.com/in/emma-baltrusaitis-4341ba32a/' },
       { name: 'Etienne Rouillard',      role: 'Class Coordinator',                         photo: '/EtienneRouilard.jpg',    linkedin: 'https://www.linkedin.com/in/etiennerouillard/' },
