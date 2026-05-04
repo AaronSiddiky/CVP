@@ -21,10 +21,19 @@ interface YearData {
 const teamData: Record<string, YearData> = {
   '2026-2027': {
     exec: [
-      { name: 'Sophia Bassi',  role: 'President', photo: '/sophiabassi.jpg',   linkedin: 'https://www.linkedin.com/in/sophia-bassi/' },
-      { name: 'Patrick Dugan', role: 'President', photo: '/patrickdugan.jpg',  linkedin: 'https://www.linkedin.com/in/patrick-dugan-0435a695/' },
+      { name: 'Sophia Bassi',          role: 'Co-President',                              photo: '/sophiabassi.jpg',   linkedin: 'https://www.linkedin.com/in/sophia-bassi/' },
+      { name: 'Patrick Dugan',         role: 'Co-President',                              photo: '/patrickdugan.jpg',  linkedin: 'https://www.linkedin.com/in/patrick-dugan-0435a695/' },
+      { name: 'Vivian Mao',            role: 'Vice President' },
+      { name: 'Anna Wei',              role: 'Co-Director of Programming & Partnerships' },
+      { name: 'Caitlyn Tang',          role: 'Co-Director of Programming & Partnerships' },
+      { name: 'Sandy Chen',            role: 'Co-Director of Programming & Partnerships' },
+      { name: 'Ryan Cortenbach',       role: 'Treasurer' },
+      { name: 'Michelle Xu',           role: 'Director of Associates' },
+      { name: 'Emma Baltrusaitis',     role: 'Director of Marketing' },
+      { name: 'Etienne Rouillard',     role: 'Class Coordinator' },
+      { name: 'Sophia Li',             role: 'Class Coordinator' },
+      { name: 'Venice Chalermthanakom', role: 'Director of Community' },
     ],
-    note: 'Incoming Executive Board yet to be announced.',
   },
   '2025-2026': {
     exec: [
