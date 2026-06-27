@@ -67,7 +67,7 @@ const teamData: Record<string, YearData> = {
       'Edward Sutton', 'Sandy Chen', 'Jan Espelien', 'Vivian Mao', 'Carter Han', 'Zaid Ashruf',
       'Emma Baltrusaitis', 'Nikhil Bohra', 'Andrew Barth', 'Anna Wei', 'Ryan Cortenbach',
       'Caitlyn Tang', 'Michelle Xu', 'Venice Chalermthanakom', 'Sophia Huh', 'Alexis Curisaca',
-      'Etienne Rouillard', 'Hannah Stone', 'Akira Iwata', 'Zane Zhao', 'Michael Forde',
+      'Etienne Rouillard', 'Hannah Stone', 'Akira Iwata', 'Michael Forde',
     ].map(n => ({ name: n, role: 'Analyst' })),
   },
   '2024-2025': {
