@@ -98,7 +98,6 @@ const teamData: Record<string, YearData> = {
       { name: 'Etienne Rouillard', role: 'Analyst', photo: '/clubwide.JPG' },
       { name: 'Hannah Stone', role: 'Analyst', photo: '/clubwide.JPG' },
       { name: 'Akira Iwata', role: 'Analyst', photo: '/clubwide.JPG' },
-      { name: 'Zane Zhao', role: 'Analyst', photo: '/clubwide.JPG' },
       { name: 'Michael Forde', role: 'Analyst', photo: '/clubwide.JPG' },
     ],
   },
