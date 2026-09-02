@@ -45,7 +45,7 @@ const Hero = () => {
         >
           <motion.div className="hero-meta" variants={smallRise}>
             <span>
-              <span className="dot"></span>Cohort X · 2025–2026 · Recruitment Closed
+              <span className="dot"></span>Cohort X · 2025–2026 · Recruitment Open
             </span>
             <span>New York · Morningside Heights · Est. MMXVI</span>
           </motion.div>

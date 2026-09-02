@@ -6,6 +6,7 @@ import MembersSection from '@/components/MembersSection'
 import Hero from '@/components/Hero'
 import Stats from '@/components/Stats'
 import { Reveal, StaggerGroup, StaggerItem } from '@/components/Motion'
+import { APPLY_URL } from '@/lib/links'
 
 export default function Home() {
   return (
@@ -170,25 +171,37 @@ export default function Home() {
         <div className="apply-wrap">
           <Reveal className="eyebrow" style={{ paddingTop: 8 }}>§ 06 &nbsp; Admissions</Reveal>
           <Reveal delay={0.08}>
-            <h2 className="apply-title">We consider <em>fewer than twenty</em> applicants each fall.</h2>
+            <h2 className="apply-title">Applications for Analysts and Associates are <em>now open</em></h2>
           </Reveal>
 
           <div className="apply-body">
             <Reveal delay={0.12}>
-              <p>Applications for the Eleventh Cohort open in late August. We read every submission twice. If your background is non-traditional, tell us plainly.</p>
+              <p>Students across all years are welcome to apply. Analysts are usually students in their first or second years. Associates generally have some knowledge and/or prior experience in the industry and are sophomores and older.</p>
+            </Reveal>
+
+            <Reveal delay={0.14}>
+              <h3 className="apply-steps-title">Recruiting Timeline</h3>
             </Reveal>
 
             <StaggerGroup className="apply-steps" delay={0.15}>
-              <StaggerItem className="apply-step"><span className="num">i.</span><span className="label">Written application</span><span className="date">Aug. 26</span></StaggerItem>
-              <StaggerItem className="apply-step"><span className="num">ii.</span><span className="label">First-round interview</span><span className="date">Sept. 14</span></StaggerItem>
-              <StaggerItem className="apply-step"><span className="num">iii.</span><span className="label">Investment memo</span><span className="date">Sept. 28</span></StaggerItem>
-              <StaggerItem className="apply-step"><span className="num">iv.</span><span className="label">Final deliberation</span><span className="date">Oct. 10</span></StaggerItem>
+              <StaggerItem className="apply-step"><span className="num">i.</span><span className="label">Applications Open</span><span className="date">Thursday, September 3rd at 10:00AM</span></StaggerItem>
+              <StaggerItem className="apply-step"><span className="num">ii.</span><span className="label">Coffee Chats</span><span className="date">Tuesday, September 8th (Through the 16th)</span></StaggerItem>
+              <StaggerItem className="apply-step"><span className="num">iii.</span><span className="label">Activities Fair</span><span className="date">Friday, September 11th from 12:00 - 4:00PM</span></StaggerItem>
+              <StaggerItem className="apply-step"><span className="num">iv.</span><span className="label">Info Session I</span><span className="date">Sunday, September 13th at 4:00PM</span></StaggerItem>
+              <StaggerItem className="apply-step"><span className="num">v.</span><span className="label">Info Session II</span><span className="date">Monday, September 14th at 6:00PM</span></StaggerItem>
+              <StaggerItem className="apply-step"><span className="num">vi.</span><span className="label">Bessemer Investor Panel</span><span className="date">Tuesday, September 15th at 6:00PM</span></StaggerItem>
+              <StaggerItem className="apply-step"><span className="num">vii.</span><span className="label">Application Deadline</span><span className="date">Wednesday, September 16th at 11:59PM</span></StaggerItem>
             </StaggerGroup>
 
             <Reveal delay={0.25}>
-              <div className="apply-cta apply-cta--closed">
-                Recruitment Closed
-              </div>
+              <a
+                className="apply-cta"
+                href={APPLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Recruitment Open <span aria-hidden="true">&#8599;</span>
+              </a>
             </Reveal>
 
             <Reveal delay={0.3}>

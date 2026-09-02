@@ -889,6 +889,15 @@ section { padding: 0 var(--px); }
   line-height: 1.45;
   color: var(--ink-soft);
 }
+.apply-steps-title {
+  margin-top: 32px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 400;
+}
 .apply-steps { margin-top: 12px; border-top: 1px solid var(--rule); }
 .apply-step {
   padding: 18px 0;
